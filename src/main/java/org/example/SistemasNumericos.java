@@ -30,28 +30,37 @@ public class SistemasNumericos {
             }
         } while (!entradaValida);
 
+
+
         System.out.println("numeroDecimal = " + numeroDecimal);
-        System.out.println("numero binario de " + numeroDecimal + " = " + Integer.toBinaryString(numeroDecimal));
+        String mensajeBinario = "numero binario de " + numeroDecimal + " = " + Integer.toBinaryString(numeroDecimal);
+        System.out.println(mensajeBinario);
 
         System.out.println("-------------------------------------------------------------\n");
         int numeroBinario = 0b111110100;
         System.out.println("numeroBinario = " + numeroBinario);
-        System.out.println("numero octal de " + numeroBinario + " = " + Integer.toOctalString(numeroBinario));
+        String mensajeOctal = "numero octal de " + numeroBinario + " = " + Integer.toOctalString(numeroBinario);
+        System.out.println(mensajeOctal);
 
         System.out.println("-------------------------------------------------------------\n");
         int numeroOctal = 0764;
         System.out.println("numeroOctal = " + numeroOctal);
-        System.out.println("numero hexadecimal de " + numeroOctal + " = " + Integer.toHexString(numeroOctal));
+        String mensajeHex = "numero hexadecimal de " + numeroOctal + " = " + Integer.toHexString(numeroOctal);
+        System.out.println(mensajeHex);
 
         System.out.println("-------------------------------------------------------------\n");
         int numeroHex = 0x1f4;
         System.out.println("numeroHex = " + numeroHex);
 
+        String message = mensajeOctal + "\n" +
+                mensajeOctal+ "\n" +
+                mensajeHex;
+        JOptionPane.showMessageDialog(null, message);
     }
 
-    private static boolean hasSpecialCharacters(String input, String regex) {
+    /*private static boolean hasSpecialCharacters(String input, String regex) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input);
         return matcher.find();
-    }
+    }*/
 }
