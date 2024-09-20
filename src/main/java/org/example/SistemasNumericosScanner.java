@@ -1,24 +1,29 @@
 package org.example;
 
 import javax.swing.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Scanner;
 
-public class SistemasNumericos {
+public class SistemasNumericosScanner {
     public static void main(String[] args) {
+        System.out.println("-------------------------------------------------------------\n");
+
+        Scanner scanner = new Scanner(System.in);
+
         String entrada;
         int numeroDecimal = 0;
-        entrada = JOptionPane.showInputDialog("Ingrese un número entero:");
+
+        System.out.println("Ingrese un número entero:");
+        entrada = scanner.nextLine();
 
         try {
             numeroDecimal = Integer.parseInt(entrada);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, ingrese un número entero.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Entrada inválida. Por favor, ingrese un número entero.\n");
             main(args);
             System.exit(0);
         }
 
+        System.out.println("numeroDecimal = " + numeroDecimal);
         String mensajeBinario = "numero binario de " + numeroDecimal + " = " + Integer.toBinaryString(numeroDecimal);
         String mensajeOctal = "numero octal de " + numeroDecimal + " = " + Integer.toOctalString(numeroDecimal);
         String mensajeHex = "numero hexadecimal de " + numeroDecimal + " = " + Integer.toHexString(numeroDecimal);
@@ -27,7 +32,7 @@ public class SistemasNumericos {
         String message = mensajeBinario + "\n" +
                 mensajeOctal+ "\n" +
                 mensajeHex;
-        JOptionPane.showMessageDialog(null, message);
+        System.out.println(message);
     }
 
     /*private static boolean hasSpecialCharacters(String input, String regex) {
